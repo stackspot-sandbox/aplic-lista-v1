@@ -1,0 +1,49 @@
+schema-version: v2
+kind: manifest
+metadata:
+  name: aplic-lista-v1
+  description: testes
+  starter: studio-inputs/stack-lista@1.0.0/starter-input-lista
+  stack-version-id: 01J3NTWVJKFFH17GHVZ8ZM32SK
+  stack: stack-lista@1.0.0
+spec:
+  type: app
+  app-id: 01J47P8YY0ADMAWTPD4QVSS5VX
+  plugins:
+    - name: studio-inputs/stack-lista@1.0.0/plugin-infra-sns-top@4.0.0
+      alias: plugin-infra-sns-top-1722540084667
+      plugin-version-id: 01J3GG36GMTR79HMBH2QZ93KT7
+      stack-version-id: 01J3NTWVJKFFH17GHVZ8ZM32SK
+      type: infra
+      inputs:
+        sns_topic_name1: sns-22222-222
+        sns_topic_name2: sns-44444-4444
+      inputs-envs: {}
+      connections:
+        generates:
+          - type: aws-sns-conn
+            selected: con-tetes-sns
+            alias: alias-sns-1
+          - type: aws-sns-conn
+            selected: son-teste-sns-2
+            alias: alias-sns-2
+        requires: []
+      links:
+        generates: []
+    - name: studio-inputs/stack-lista@1.0.0/plugin-app-v3-with-list@0.0.1
+      alias: plugin-app-v3-with-list-1722540084660
+      plugin-version-id: 01J3FSE091K2XVE8SDJPA4BHF1
+      stack-version-id: 01J3NTWVJKFFH17GHVZ8ZM32SK
+      type: app
+      inputs:
+        ips:
+          - 2
+      inputs-envs: {}
+      connections:
+        generates: []
+        requires: []
+      links:
+        generates: []
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/stackspot-sandbox/aplic-lista-v1
