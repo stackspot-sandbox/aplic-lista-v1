@@ -1,0 +1,32 @@
+kind: application
+metadata:
+  description: testes
+  name: aplic-lista-v1
+schema-version: v1
+spec:
+  applied-plugins:
+  - alias: plugin-app-v3-with-list-1722540084660
+    connections:
+      generates: []
+      requires: []
+    inputs:
+      ips:
+      - '2'
+    inputs-envs: {}
+    name: studio-inputs/stack-lista@1.0.0/plugin-app-v3-with-list
+  - alias: plugin-infra-sns-top-1722540084667
+    connections:
+      generates:
+      - alias: alias-sns-1
+        selected: con-tetes-sns
+        type: aws-sns-conn
+      - alias: alias-sns-2
+        selected: son-teste-sns-2
+        type: aws-sns-conn
+      requires: []
+    inputs:
+      sns_topic_name1: sns-22222-222
+      sns_topic_name2: sns-44444-4444
+    inputs-envs: {}
+    name: studio-inputs/stack-lista@1.0.0/plugin-infra-sns-top
+  repository: https://github.com/stackspot-sandbox/aplic-lista-v1
