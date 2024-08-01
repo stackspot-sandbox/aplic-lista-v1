@@ -8,6 +8,7 @@ metadata:
   stack: stack-lista@1.0.0
 spec:
   type: app
+  app-id: 01J47P8YY0ADMAWTPD4QVSS5VX
   plugins:
     - name: studio-inputs/stack-lista@1.0.0/plugin-infra-sns-top@4.0.0
       alias: plugin-infra-sns-top-1722540084667
